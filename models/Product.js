@@ -24,11 +24,7 @@ Product.init(
       type: DataTypes.DECIMAL,
       allowNull: false,
       validate: {
-        isDecimal: (value) => { //value here is the inputted price value, value is always the inputted value 
-          if (typeof value !== "DECIMAL") {
-            throw new Error("Name must be a decimal");
-          }
-        }
+        isDecimal: true
       }
     },
     stock: {
@@ -36,11 +32,7 @@ Product.init(
       allowNull: false,
       defaultValue: 10,
       validate: {
-        isNumeric: (value) => {
-          if (typeof value != "INTEGER" || typeof value != "DECIMAL") {
-            throw new error("Stock value must be numeric");
-          }
-        }
+        isInt: true,
       }
     },
     category_id: {
